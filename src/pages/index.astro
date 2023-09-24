@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>👋 Hello, I'm Connor!</h1>
+			<p>
+				I write code and build things. This site is where I will document 
+				some of the things I build, so that we can all agree that I did them, 
+				and that they continue to be bad ideas.
+			</p>
+			<p>
+				Here's some pictures of me doing things:
+			</p>
+			
+		</main>
+		<Footer />
+	</body>
+</html>
