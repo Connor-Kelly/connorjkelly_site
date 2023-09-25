@@ -29,7 +29,7 @@ const { Content } = await index.render();
 			<section class="">
 				<div class="flex flex-wrap justify-center items-center">
 					{
-						posts.filter(p => p.id != index.id)
+					posts.filter(p => p.id != index.id)
 						.map((post) => (
 							<div class="w-1/2 lg:w-4/12 m-4 text-center hover:shadow-xl shadow-sm transition-all grow">
 								{post.id}
