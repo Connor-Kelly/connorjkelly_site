@@ -17,7 +17,7 @@ Github: https://github.com/majodev/google-webfonts-helper
 This will allow you to download a .zip, which you may unzip to get a few .woff files.
 
 Convieniently, the site also gives you the css:
-![Alt text](image.png)
+![Alt text](/fonts-refimage.png)
 Add all of this to the /src/styles/global.css file.\
 It adds the fonts your avaliable fonts in the browser.
 
