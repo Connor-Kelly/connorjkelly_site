@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import MainLayout from '../layouts/MainLayout.astro'
+import ConstructionSign from '../components/ConstructionSign.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+// Supports weights 100-700
+---
+
+<!doctype html>
+<html
+	lang='en'
+	class=''
+>
+	<head>
+		<BaseHead
+			title={SITE_TITLE}
+			description={SITE_DESCRIPTION}
+		/>
+	</head>
+	<body class=''>
+		<Header title={SITE_TITLE} />
+		<MainLayout>
+			<slot />
+		</MainLayout>
+		<Footer />
+	</body>
+</html>

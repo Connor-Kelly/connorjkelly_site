@@ -20,7 +20,7 @@ const { Content } = await index.render();
 	</head>
 	<body>
 		<Header />
-		<main class="w-[960px]">
+		<main class="w-[1024px]">
 			<section class="flex flex-wrap justify-center">
 				<div class="text-center prose">
 					<Content />
@@ -31,11 +31,11 @@ const { Content } = await index.render();
 					{
 					posts.filter(p => p.id != index.id)
 						.map((post) => (
-							<div class="w-1/2 lg:w-4/12 m-4 text-center hover:shadow-xl shadow-sm transition-all grow">
-								{post.id}
+							<div class="w-1/2 sm:w-full lg:w-4/12 m-4 pb-1 text-center hover:shadow-xl shadow-md transition-all grow bg-zinc-100">
+								
 								<a href={`/projects/${post.slug}/`}>
-									<img class="w-100" src={post.data.heroImage} alt="" />
-									<h2 class="text-3xl">{post.data.title}</h4>
+									<h2 class="pt-1 text-3xl">{post.data.title}</h4>
+									<img class="w-100 rounded-b-lg" src={post.data.heroImage} alt="" />
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>

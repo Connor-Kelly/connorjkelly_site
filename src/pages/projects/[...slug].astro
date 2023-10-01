@@ -1,20 +1,96 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import { type CollectionEntry, getCollection } from 'astro:content'
+import BlogPost from '../../layouts/BlogPost.astro'
+import ProjectPage from '../../layouts/ProjectPage.astro'
+import PostLink from '../../layouts/PostLink.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import BaseHead from '../../components/BaseHead.astro'
 
 export async function getStaticPaths() {
-	const posts = await getCollection('projects');
+	const posts = await getCollection('projects')
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
-	}));
+	}))
 }
-type Props = CollectionEntry<'projects'>;
+type Props = CollectionEntry<'projects'>
 
-const post = Astro.props;
-const { Content } = await post.render();
+const post = Astro.props
+const projectName = post.slug.split('/')[0]
+const { Content } = await post.render()
+// const projectName = Astro.props.projectName
+let pages = await getCollection(
+	'projects',
+	(page) => page.id.split('/')[0] == post.slug
+)
+// const index = pages.find((p) => p.id == post.id)
+// .reduce((acc, page) => {
+// 	acc[page.id] = page
+// 	console.log(page.id)
+// 	return acc
+// },{} )
+// const index = pages[`${projectName}/index.mdx`]
+// const Content = index ? await index.render() : <div></div>
+// const contentPath =
+// import {Content as Index} from contentPath.toString();
+// const posts = (await Astro.glob(`../../content/projects/${projectName}/index.md?x`.toString()))
+// const index = posts.at(0)
+// let Content
+// if (index != undefined) {
+// 	let { Content } = await index.render(); // TODO: should probably handle null case here at some point
+// 	console.log(`made content: ${Content}`)
+// }
+// pages = pages.filter(p => p != index)
+const title = 'a project'
+const description = 'a project description'
 ---
 
-<BlogPost {...post.data}>
+<!-- <BlogPost {...post.data}>
 	<Content />
-</BlogPost>
+</BlogPost> --><!-- <ProjectPage projectName={Astro.props.slug}/> -->
+<html lang='en'>
+	<head>
+		<BaseHead
+			title={title}
+			description={description}
+		/>
+		<!-- </style> -->
+	</head>
+	<body>
+		<Header />
+		<div>
+			Project: {projectName}
+		</div>
+		<main class='flex flex-wrap justify-center items-center'>
+			<!-- <index?.Content /> -->
+			<div class='prose'>
+				<Content />
+			</div>
+
+			<div class="bg-slate-100">
+				More Posts from this project:
+				<div class='flex flex-wrap justify-center items-start'>
+					<!-- <div class='flex flex-wrap flex-col'> -->
+					{
+						pages.map((page) => (
+							<div class='w-1/3'>
+								<PostLink post={page} />
+							</div>
+						))
+					}
+					{
+						pages.map((page) => (
+							<div class='w-1/3 grow'>
+								<PostLink post={page} />
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</main>
+		<!-- {JSON.stringify(pages)} -->
+
+		<Footer />
+	</body>
+</html>

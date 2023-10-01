@@ -1,3 +1,10 @@
+---
+title: 'Adding Fonts'
+description: 'Adding fonts to the site'
+pubDate: 'September 24, 2024'
+heroImage: '\SiteScreenshot.png'
+---
+
 ## Fonts
 Fonts are weird over the web.\
 as per [Astro Docs](https://docs.astro.build/en/guides/fonts/)
