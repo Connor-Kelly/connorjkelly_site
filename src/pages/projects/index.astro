@@ -17,12 +17,12 @@ const { Content } = await index.render()
 		</div>
 	</section>
 	<section class=''>
-		<div class='flex flex-wrap justify-center items-center'>
+		<div class='columns-2 gap-4'>
 			{
 				posts
 					.filter((p) => p.id != index.id)
 					.map((post) => (
-						<div class='w-1/2 sm:w-full lg:w-4/12 m-4 pb-1 text-center hover:shadow-xl shadow-md transition-all grow bg-zinc-100'>
+						<div class='mb-4 text-center hover:shadow-xl rounded-lg shadow-md transition-all grow bg-zinc-100'>
 							<a href={`/projects/${post.slug}/`}>
 								<h2 class='pt-1 text-3xl'>{post.data.title}</h2>
 								<img

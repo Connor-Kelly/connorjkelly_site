@@ -1,43 +1,55 @@
 ---
 // export let HeaderItems = ["A", "B", "C", "D"]
-const { HeaderItems, ContentItems } = Astro.props;
-
+const { HeaderItems, ContentItems } = Astro.props
 ---
 
-
-
-<hr>
-<div class=" flex flex-row ">
-    <div class="grow italic text-xl">
-        <ul>
-            <li>
-                {HeaderItems[0]}
-            </li>
-            <li>
-                {HeaderItems[2]}
-            </li>
-        </ul>
+<div class=''>
+    <div class="flex flex-row flex-wrap">
+        {HeaderItems.map((hi, index) => (
+            <div class={
+                "w-2/5 grow shrink " +
+                (index==0 ? "font-bold ":" ") +
+                (index %2==0 ?"text-left italic" : "text-right")
+            
+            }>
+                {hi}
+            </div>
+        ))}
     </div>
-    <div class="grow text-right">
-        <ul>
-            <li>
-                {HeaderItems[1]}
-            </li>
-            <li>
-                {HeaderItems[3]}
-            </li>
-        </ul>
-    </div>
+	
+	<!-- <div class='grow italic'>
+		<ul>
+			<li class='font-semibold'>
+				{HeaderItems[0]}
+			</li>
+			<li>
+				{HeaderItems[2]}
+			</li>
+		</ul>
+	</div>
+	<div class='grow text-right'>
+		<ul>
+			<li>
+				{HeaderItems[1]}
+			</li>
+			<li>
+				{HeaderItems[3]}
+			</li>
+		</ul>
+	</div> -->
 </div>
 <div>
-    <slot>
-        <ul class="list-disc list-inside prose max-w-4xl">
-            {
-                ContentItems.map(ci => (
-                    <li class=" my-0">{ci}</li>
-                    )
-                )
-            }
-        </ul>
-    </slot>
+	<slot>
+		{
+			ContentItems != undefined ? (
+				<ul class='list-disc list-inside prose max-w-4xl'>
+					{ContentItems.map((ci) => (
+						<li class=' my-0'>{ci}</li>
+					))}
+				</ul>
+			) : (
+				''
+			)
+		}
+	</slot>
 </div>
