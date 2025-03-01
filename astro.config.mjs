@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Connor J Kelly",
+      logo: { src: "./public/favicon.svg" },
       social: {
         email: "mailto:connorkelly726@gmail.com",
         linkedin: "https://www.linkedin.com/in/connor-kelly/",
@@ -24,9 +25,8 @@ export default defineConfig({
         "career/resume",
         {
           label: "Projects",
-          autogenerate: { directory: 'projects' },
+          autogenerate: { directory: "projects" },
           collapsed: true,
-
         },
       ],
     }),

@@ -36,5 +36,19 @@ essentially, your keys are loosely organized by how often you use each of the ke
 
 One of the problems: in vim, you hold down the j and k keys, so essentially you need a way to break out of that.
 
+# Solving the vim tap-j problem
+
+Home row mods are super cool, but they absolutely slow down your typing speed, it adds the smallest amount of 
+latency in your key presses. Not that big of a deal, you gain the speed back in not having to move your hand
+to stretch to modifier keys. 
+The main problem I've had is the hold-j problem. 
+For this, you need to know a little bit about vim. I'll probably write up a personal page for this at some point, but it
+mainly boils own to this: almost all interactions with the program require interaction via keycodes. Want to go up one
+line? You press j and your cursor moves up. You want to keep moving up in the lines? You hold j. Here lies the problem:
+we've remapped the hold-j behavior to a modifier key, (I've chosen CTRL) and so, I cant hold down the key to consistently
+scroll. And I dont want to type a j key constantly. 
+For this, we need Quick tapping, `quick-tap-ms: <200>;`
+
+
 
 
