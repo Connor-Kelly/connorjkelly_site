@@ -7,7 +7,8 @@ description: My Resume! In markdown format.
 
 ---
 
-import { Badge } from "@astrojs/starlight/components";
+import { Badge, Icon } from "@astrojs/starlight/components";
+
 
 ### Rice University - Undergraduate
 
@@ -26,13 +27,19 @@ Algorithmic Design (COMP 182, 382, 450)
 
 ---
 
+
+
 ### Paycom - Full Stack Software Developer III
 
 ---
 
 {/* **[ React, PHP, C#, SQL ]** */}
 <div>
-<Badge size="large" text="React" variant="note" /> <Badge
+
+<Icon name="seti:react" />
+<Badge size="large" text="React" variant="note" /> 
+
+<Badge
   size="large"
   text="PHP"
   variant="tip"

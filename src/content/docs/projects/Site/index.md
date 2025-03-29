@@ -1,5 +1,5 @@
 ---
-title: ConnorJKelly.com
+title: Index
 description: The main project file for the ConnorJKelly website
 sidebar: 
     order: 1
@@ -121,3 +121,8 @@ Lets revisit my checklist:
     it, you wont work on it after a long day of staring at sketchy php at work.
 
 
+title: Index
+description: the index
+
+
+---

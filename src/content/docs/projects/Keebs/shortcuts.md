@@ -24,6 +24,6 @@ Lets take a keyboard shortcut that really sucks to hit. "CTRL + SHIFT + F5". Fro
 So how do you deal with this? You can either ask phpstorm to change the keycode for the action, or you can make the keys lot easier to hit.
 
 Changing the keycombo for a action might be fine for a few, but its just not scalable. You have to set it up on every instance of the program, and it doesnt work on other peoples devices, and it could very easily get reverted with every single update. I've found one example where it might be fine, and thats in VSCode, where your custom keycodes can be exported.
-j
+
 
 

@@ -12,5 +12,8 @@ description: a list of things used in the making of this project
 - https://vercel.com/docs/getting-started-with-vercel/projects-deployments
 
 ### Various interesting tech:
-- 
+- https://www.phoenixframework.org/
+- https://gleam.run/
+- https://hexdocs.pm/lustre/
+
 

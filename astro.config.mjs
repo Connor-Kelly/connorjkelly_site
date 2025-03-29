@@ -25,6 +25,7 @@ export default defineConfig({
         "career/resume",
         {
           label: "Projects",
+          // link: "projects/index",
           autogenerate: { directory: "projects" },
           collapsed: true,
         },

@@ -1,0 +1,41 @@
+---
+title: My Projects
+description: The main page for my projects
+sidebar:
+  order: 1
+---
+
+import { Card,  CardGrid } from '@astrojs/starlight/components';
+import LinkCard from '../../../components/starlight/LinkCard.astro';
+
+### What is this:
+
+The projects documented here are the projects I both deemed interesting enough 
+to write down, as well as good enough that someone might think that it might be an 
+interesting read.
+
+Please feel free to read through any of the pages here, but keep in mind that I do
+all this after work, and often, documenting the work is the most boring part of the 
+project. 
+
+
+### Different Projects
+
+
+<CardGrid stagger>
+	<LinkCard title="Site" icon="pen" href="/projects/site" >
+		How and Why this site is set up the way it is. As well as a sometimes
+		entertaining account of my personal thoughts about the state of 
+		web development. 
+	</LinkCard>
+	<LinkCard title="Keebs" icon="laptop" href="/projects/keebs">
+		My personal journey in Keyboards, Ergonomics, and the pursuit of
+		what most people consider useless.
+	</LinkCard>
+	<LinkCard title="Config" icon="setting" href="/projects/config">
+		The relatively uninteresting story of how I like to set up my
+		dev config, and the various shenanigans that have to do with it.
+	</LinkCard>
+</CardGrid>
+
+
