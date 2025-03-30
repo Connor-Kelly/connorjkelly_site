@@ -1,0 +1,14 @@
+services:
+  site:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./config:/etc/nginx/
+      - ../dist:/html
+    networks:
+      - external_network
+
+networks:
+  external_network:
+    driver: bridge
