@@ -16,4 +16,7 @@ description: a list of things used in the making of this project
 - https://gleam.run/
 - https://hexdocs.pm/lustre/
 
+### Other cool sites:
+- https://daviskirkendall.com/2021/08/05/why-i-use-doom-emacs/
+
 

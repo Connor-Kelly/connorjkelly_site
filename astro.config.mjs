@@ -25,7 +25,6 @@ export default defineConfig({
         "career/resume",
         {
           label: "Projects",
-          // link: "projects/index",
           autogenerate: { directory: "projects" },
           collapsed: true,
         },
@@ -34,21 +33,3 @@ export default defineConfig({
   ],
 });
 
-// {
-// 	label: 'Guides',
-// 	items: [
-// 		// Each item here is one entry in the navigation menu.
-// 		{
-// 			label: 'Example Guide',
-// 			slug: 'guides/example',
-// 		},
-// 	],
-// 	collapsed: true,
-// },
-// {
-// 	label: 'Reference',
-// 	autogenerate: {
-// 		directory: 'reference',
-// 	},
-// 	collapsed: true,
-// },
