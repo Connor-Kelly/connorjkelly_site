@@ -1,49 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/*@font-face {
+  font-family: "nerdfont";
+  src:
+    url("/assets/fonts/FiraCodeNerdFont-Regular.woff2") format("woff2"),
+    url("/assets/fonts/FiraCodeNerdFont-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}*/
+
+@font-face {
+  font-family: "victor-mono";
+  src:
+    url("/fonts/VictorMono-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "victor-mono";
+  src:
+    url("/fonts/VictorMono-MediumItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+/* Core classes */
+.nf {
+  /*font-family: "Fira Code";*/
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  display: inline-block;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Example icons – add as many as you need */
+.nf-fa-github:before {
+  content: "\f09b";
+}
+.nf-oct-file_code:before {
+  content: "\f010";
+}
+.nf-linux-archlinux:before {
+  content: "\f303";
+}
+.nf-md-power_plug:before {
+  content: "\f1002";
+}
+
 /* Dark mode colors. */
 :root {
-	--sl-color-accent-low: #1b2339;
-	--sl-color-accent: #4b63b5;
-	--sl-color-accent-high: #bdc8e6;
-	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #eeeeee;
-	--sl-color-gray-2: #c2c2c2;
-	--sl-color-gray-3: #8b8b8b;
-	--sl-color-gray-4: #585858;
-	--sl-color-gray-5: #383838;
-	--sl-color-gray-6: #272727;
-	--sl-color-black: #181818;
+  /*font-family: 'Courier Prime';*/
+  /*font-family: 'Victor Mono';*/
+  --sl-font-system: "victor-mono";
+  /* --font-sans: 'Courier Prime'; */
+  --sl-color-accent-low: #1b2339;
+  --sl-color-accent: #4b63b5;
+  --sl-color-accent-high: #bdc8e6;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eeeeee;
+  --sl-color-gray-2: #c2c2c2;
+  --sl-color-gray-3: #8b8b8b;
+  --sl-color-gray-4: #585858;
+  --sl-color-gray-5: #383838;
+  --sl-color-gray-6: #272727;
+  --sl-color-black: #181818;
 }
 /* Light mode colors. */
-:root[data-theme='light'] {
-	--sl-color-accent-low: #ced7ed;
-	--sl-color-accent: #4d65b7;
-	--sl-color-accent-high: #243054;
-	--sl-color-white: #181818;
-	--sl-color-gray-1: #272727;
-	--sl-color-gray-2: #383838;
-	--sl-color-gray-3: #585858;
-	--sl-color-gray-4: #8b8b8b;
-	--sl-color-gray-5: #c2c2c2;
-	--sl-color-gray-6: #eeeeee;
-	--sl-color-gray-7: #f6f6f6;
-	--sl-color-black: #ffffff;
+:root[data-theme="light"] {
+  --sl-color-accent-low: #ced7ed;
+  --sl-color-accent: #4d65b7;
+  --sl-color-accent-high: #243054;
+  --sl-color-white: #181818;
+  --sl-color-gray-1: #272727;
+  --sl-color-gray-2: #383838;
+  --sl-color-gray-3: #585858;
+  --sl-color-gray-4: #8b8b8b;
+  --sl-color-gray-5: #c2c2c2;
+  --sl-color-gray-6: #eeeeee;
+  --sl-color-gray-7: #f6f6f6;
+  --sl-color-black: #ffffff;
 }
 
 :root {
-				--sl-sidebar-width: 18.75rem;
-				--sl-content-width: 60rem;
-				main {
-								h2 {
-												margin-top: 1.0em;
-								}
-								h3 {
-												margin-top: 0.75em;
-								}
-								p {
-												margin-top: 0.5em;
-								}
-				}
-				/* ul { */
-				/* 				list-style-position: outside; */
-				/* 				padding-left: 2em; */
-				/* } */
+  --sl-sidebar-width: 18.75rem;
+  --sl-content-width: 60rem;
+  main {
+    h2 {
+      margin-top: 1em;
+    }
+    h3 {
+      margin-top: 0.75em;
+    }
+    p {
+      margin-top: 0.5em;
+    }
+  }
 }

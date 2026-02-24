@@ -13,6 +13,7 @@ export default defineConfig({
         linkedin: "https://www.linkedin.com/in/connor-kelly/",
         github: "https://github.com/Connor-Kelly",
       },
+      
       components: {
         Head: "./src/components/starlight/Head.astro",
       },
@@ -26,7 +27,7 @@ export default defineConfig({
         {
           label: "Projects",
           autogenerate: { directory: "projects" },
-          collapsed: true,
+          collapsed: false,
         },
       ],
     }),

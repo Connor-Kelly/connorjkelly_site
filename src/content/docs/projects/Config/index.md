@@ -5,7 +5,7 @@ description: All the configurations that make my dev interesting and efficient.
 
 ## Learning to config:
 
-One of the most important things you learn in software development is how you
+<span style="font-variant-ligatures: common-ligatures;">___One Italic___</span> of the most important things you learn in software development is how you
 keep up with all the things you keep configured. Linux is a similar setup, but 
 100x'ed. Depending on the distro, you may be able to configure everything from 
 hard drive mount points to the color of primary buttons in all the GTK applications
