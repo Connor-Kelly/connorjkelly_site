@@ -1,36 +1,12 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
+import { defineConfig } from 'astro/config';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    starlight({
-      title: "Connor J Kelly",
-      logo: { src: "./public/favicon.svg" },
-      social: {
-        email: "mailto:connorkelly726@gmail.com",
-        linkedin: "https://www.linkedin.com/in/connor-kelly/",
-        github: "https://github.com/Connor-Kelly",
-      },
-      
-      components: {
-        Head: "./src/components/starlight/Head.astro",
-      },
-      customCss: ["./src/styles/custom.css"],
-      sidebar: [
-        {
-          label: "Home",
-          link: "",
-        },
-        "career/resume",
-        {
-          label: "Projects",
-          autogenerate: { directory: "projects" },
-          collapsed: false,
-        },
-      ],
-    }),
-  ],
+  vite: {
+    plugins: [tailwindcss()]
+  },
+  site: "https://connorjkelly.com",
 });
-

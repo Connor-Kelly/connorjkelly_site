@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import CommonHead from '../components/CommonHead.astro';
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		<CommonHead />
+		<script is:inline>
+			if (localStorage.getItem('theme') === null) {
+				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					is_dark = true;
+				}
+
+				document.documentElement.setAttribute('data-theme', !is_dark ? 'light' : 'dark');
+			} else {
+				document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'));
+			}
+		</script>
+		<script>
+			import { themeChange } from 'theme-change';
+			themeChange();
+		</script>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

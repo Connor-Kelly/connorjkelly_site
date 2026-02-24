@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+const allBlogPosts = await getCollection('blog');
+---
+
+<div
+	id='sidebar'
+	class='top-0 bg-base-200 h-dvh border-r-base-100 transition-all transform px-4 sticky pt-4 border-r-2 border-accent'
+	data-effect='$current_page = window.location.pathname'
+>
+	<div class='w-full flex items-center content-center justify-items-center mb-8 flex-col'>
+		<div class='avatar avatar-placeholder'>
+			<div class='bg-base-300 w-18 rounded-full'>
+				<span class='text-2xl'>CK</span>
+			</div>
+		</div>
+		<div class='flex-1'>
+			<a class='btn btn-ghost text-xl' href='/'>Connor Kelly</a>
+		</div>
+	</div>
+
+	<ul class='menu w-56 bg-base-200 rounded-box'>
+		<li class='text-start ps-0 py-2'>
+			<a
+				href={`/resume`}
+				class='link link-hover'
+				data-class:border={`$current_page.includes("/resume")`}
+				data-class:border-base-content={`$current_page.includes("/resume")`}
+			>
+				Resume
+			</a>
+		</li>
+		<li>
+			<details id='blog_details' open={Astro.url.pathname.includes("/blog")}>
+				<summary
+					data-class:border={`$current_page == "/blog"`}
+					data-class:border-base-content={`$current_page == "/blog"`}
+				>
+					<a href={`/blog`} class='link link-hover'> Blog </a>
+				</summary>
+				<ul class=''>
+					{
+						allBlogPosts.map((blogPost) => (
+							<li class='px-4 flex justify-start my-1'>
+								<a
+									href={`/blog/${blogPost.id}`}
+									class='link link-hover'
+									data-class:border={`$current_page.includes("/blog/${blogPost.id}")`}
+									data-class:border-base-content={`$current_page.includes("/blog/${blogPost.id}")`}
+								>
+									{blogPost.id}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</details>
+		</li>
+	</ul>
+</div>

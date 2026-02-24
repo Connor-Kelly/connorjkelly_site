@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+
+import SidebarLayout from './SidebarLayout.astro';
+import { schemas } from '../content.config';
+import { z } from 'astro/zod';
+
+import type { MarkdownLayoutProps } from 'astro';
+type Frontmatter = z.infer<typeof schemas.blog>;
+
+type Props = MarkdownLayoutProps<Frontmatter>;
+
+const { frontmatter, url } = Astro.props;
+
+const page = (url ?? ('' as string)).split('/').at(-1);
+---
+
+<SidebarLayout breadcrumbs={url?.split('/')}>
+	<div class='block'>
+		<div class='mx-auto container w-max'>
+			<div>
+				<table class='table table-xs w-128'>
+					<tbody>
+						<tr>
+							<th> date </th>
+							<td>
+								{new Date(frontmatter.date).toLocaleDateString()}
+							</td>
+						</tr>
+						<tr>
+							<th> description </th>
+							<td class='text-pretty'>
+								{frontmatter.description}
+							</td>
+						</tr>
+						<tr>
+							<th> tags </th>
+							<td class='flex gap-1'>
+								{frontmatter.tags.map((t) => <div class='badge badge-primary badge-xs'>{t}</div>)}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class='mb-4'></div>
+			<div class='prose'>
+				<slot />
+			</div>
+		</div>
+	</div>
+</SidebarLayout>

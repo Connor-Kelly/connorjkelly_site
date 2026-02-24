@@ -1,0 +1,232 @@
+---
+import { getCollection } from 'astro:content';
+import SidebarLayout from '../layouts/SidebarLayout.astro';
+const blog_posts = await getCollection('blog');
+import Phone from '@lucide/astro/icons/phone';
+import Mail from '@lucide/astro/icons/mail';
+import MapPin from '@lucide/astro/icons/map-pin';
+import Linkedin from '../assets/linkedin.svg';
+import { Image } from 'astro:assets';
+import Paycom from '../assets/paycom.png';
+import Rice from '../assets/rice.png';
+
+const breadcrumbs = Astro.url.pathname.split('/');
+---
+
+<SidebarLayout>
+	<div class='prose mx-auto'>
+
+		<h2 class='text-6xl mt-0 mb-6'>Connor Kelly</h2>
+		<table class='table table-sm bg-base-200 rounded-xl p-2'>
+			<tbody>
+				<tr>
+					<th class='flex gap-4 w-content'>
+						<Phone /> Phone
+					</th>
+					<td>
+						<a href='tel:+1(316)308-8285' class='link link-hover'> +1 316-308-8285 </a>
+					</td>
+				</tr>
+				<tr>
+					<th class='flex gap-4 w-content'>
+						<Mail /> Email
+					</th>
+					<td>
+						<a href='mailto:connorkelly726@gmail.com' class='link link-hover'>connorkelly726@gmail.com</a>
+					</td>
+				</tr>
+				<tr>
+					<th class='flex gap-4 w-content'>
+						<Linkedin />
+						Linkedin</th
+					>
+					<td>
+						<a href='https://www.linkedin.com/in/connor-kelly/' class='link link-hover'>
+							www.linkedin.com/in/connor-kelly/
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<th class='flex gap-4 w-content'>
+						<MapPin />
+						Location
+					</th>
+					<td> Dallas, TX </td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Results driven Full Stack Software Developer with 1.5+ years of professional experience building
+			production-grade applications utilizing React, PHP, and C#. With projects in Full Stack Development, major
+			technology migrations, and implementation of CI/CD pipelines, I have a drive to build better technology in
+			all areas of the stack.
+		</p>
+
+		<h2>WORK HISTORY</h2>
+		<hr class='mb-6' />
+		<div class='flex gap-4 bg-base-200 h-max w-max px-8 rounded-lg'>
+			<Image class='h-16 w-16 p-2 rounded-sm' src={Paycom} alt={'Paycom Logo'} />
+			<h3 class=''>
+				Paycom - Benefits To Carrier
+				<div></div>
+				<div class='badge badge-sm badge-primary'>Full Time</div>
+				<div class='badge badge-sm badge-primary'>ReactJS</div>
+				<div class='badge badge-sm badge-primary'>C#</div>
+				<div class='badge badge-sm badge-primary'>SQL</div>
+			</h3>
+		</div>
+		<div class='grid grid-cols-[max-content_max-content] border-collapse border border-none'>
+			<div class='px-2 py-1 border border-primary'>Date</div>
+			<div class='px-2 py-1 border border-primary'>2024 - 2026</div>
+			<div class='px-2 py-1 border border-primary'>Title</div>
+			<div class='px-2 py-1 border border-primary'>Full Stack Software Developer III</div>
+			<div class='px-2 py-1 border border-primary'>Location</div>
+			<div class='px-2 py-1 border border-primary'>Irving, Tx</div>
+		</div>
+		<ul>
+			<li>
+				Implemented greenfield translations project for module, bringing multi-language accessibility to our
+				client-facing applications and enabling expansion of our application to 2 new international markets.
+			</li>
+			<li>
+				Developed new React application, bringing client side visibility into the implementation statuses in
+				process, sparking conversations about modernization of current applications and reduction of tech debt.
+			</li>
+			<li>
+				Maintained code spanning 3 major development teams, paradigms, and tech stacks, including Agile and
+				Waterfall models. Excelled in forming solutions to similar problems across diverse architectures.
+			</li>
+			<li>Contributed to a culture of active code review, averaging code review on 4 PRs per day.</li>
+			<li>
+				Collaborated with Product and QA specialists to identify issues early and ensure alignment between spec
+				& expectations, introducing both unit and integration tests that contributed to an estimated 30%
+				reduction of Dev-QA feedback cycles.
+			</li>
+			<li>
+				Leveraged Python (& Pandas) to parse, clean, and integrate Operations team data, saving 3000+ estimated
+				work hours.
+			</li>
+			<li>
+				Produced Tech Specs for Projects enabling our team to continue to scale into the future; Ensured that
+				changes induced significant performance boons, ranging from 30% to 30x improvements in performance. Used
+				membership on scalability focused team to push forward initiatives to modernize applications and
+				implement stricter testing standards.
+			</li>
+		</ul>
+		<hr />
+		<h3>
+			Labatt Food Service
+			<div></div>
+			<div class='badge badge-sm badge-primary'>Internship</div>
+			<div class='badge badge-sm badge-primary'>In-Person</div>
+			<div class='badge badge-sm badge-primary'>VueJS</div>
+			<div class='badge badge-sm badge-primary'>C#</div>
+			<div class='badge badge-sm badge-primary'>SQL</div>
+		</h3>
+
+		<div class='grid grid-cols-[max-content_max-content] border-collapse border border-none'>
+			<div class='px-2 py-1 border border-primary'>Date</div>
+			<div class='px-2 py-1 border border-primary'>2023 - 2023</div>
+			<div class='px-2 py-1 border border-primary'>Title</div>
+			<div class='px-2 py-1 border border-primary'>Full Stack Software Developer Intern</div>
+			<div class='px-2 py-1 border border-primary'>Location</div>
+			<div class='px-2 py-1 border border-primary'>San Antonio, Texas</div>
+		</div>
+		<ul>
+			<li>
+				Modified internal Application using VueJS to visualize shipping data and identify freight income
+				opportunities while serving data via RESTful APIs using C#, Entity Framework, and SQL
+			</li>
+			<li>
+				Managed MariaDB SQL migrations via .Net Entity Framework, architected changes to domain models and
+				representations affecting the models of 1000 top-level objects and ~1 million of their respective
+				transactions.
+			</li>
+		</ul>
+		<hr />
+		<h3>
+			Dell Technologies 2022 - 2022 Technologist Intern - Client Advocacy Round Rock, Texas
+			<div></div>
+			<div class='badge badge-sm badge-primary'>Internship</div>
+			<div class='badge badge-sm badge-primary'>Hybrid</div>
+		</h3>
+
+		<div class='grid grid-cols-[max-content_max-content] border-collapse border border-none'>
+			<div class='px-2 py-1 border border-primary'>Date</div>
+			<div class='px-2 py-1 border border-primary'>2022 - 2022</div>
+			<div class='px-2 py-1 border border-primary'>Title</div>
+			<div class='px-2 py-1 border border-primary'>Technologist Intern</div>
+			<div class='px-2 py-1 border border-primary'>Location</div>
+			<div class='px-2 py-1 border border-primary'>Round Rock, Texas</div>
+		</div>
+		<ul>
+			<li>
+				Developed Proof of Concept Virtual Reality project, navigated ambiguous constraints, identified
+				applicable use cases, and worked with cross-functional teams.
+			</li>
+			<li>
+				Presented to technical, sales, and executive audiences, including a presentation to the SVP of our
+				business unit.
+			</li>
+		</ul>
+		<h2>EDUCATION</h2>
+		<hr class='mb-2' />
+		<div class='flex mb-2'>
+			<Image class='h-16 w-16 p-2 rounded-sm mt-0 mb-0' src={Rice} alt={'Rice University Logo'} />
+			<h3 class='text-3xl mt-2 mb-0 ml-2'>Rice University</h3>
+		</div>
+		<div class='grid grid-cols-[max-content_max-content] border-collapse border border-none'>
+			<div class='px-2 py-1 border border-primary'>Date</div>
+			<div class='px-2 py-1 border border-primary'>2020 - 2024</div>
+			<div class='px-2 py-1 border border-primary'>Major</div>
+			<div class='px-2 py-1 border border-primary'>Bachelors of Arts, Computer Science</div>
+			<div class='px-2 py-1 border border-primary'>Minor</div>
+			<div class='px-2 py-1 border border-primary'>Engineering Design</div>
+			<div class='px-2 py-1 border border-primary'>Location</div>
+			<div class='px-2 py-1 border border-primary'>Houston, Texas</div>
+		</div>
+		<!-- <span>
+			2020 - 2024 <br /> Bachelors of Arts, Computer Science <br /> Minor, Engineering Design <br /> Houston, Texas
+		</span> -->
+		<h2>SKILLS</h2>
+		<hr class='mb-6' />
+		<ul>
+			<li>Programming Languages: Javascript & Typescript, Python, C, C#, PHP, Java, SQL, Rust, HTML5, CSS</li>
+			<li>Frameworks & Libraries: React, VueJS, Bootstrap, Tailwind, Pandas, NumPy</li>
+			<li>Tools: Linux (Debian, Alpine, Arch), Docker, (N)Vim, Jira, Confluence</li>
+			<li>Misc: Git, GitHub & Gitlab CI/CD, Jenkins, Typst, RabbitMQ, Swagger, Kibana, Gherkin</li>
+		</ul>
+		<h2>PROJECTS</h2>
+		<hr class='mb-6' />
+		<div>
+			<h3>
+				Yalnix Kernel & Subsystems: C
+
+				<div></div>
+				<div class='badge badge-sm badge-primary'>School Project</div>
+				<div class='badge badge-sm badge-accent'>C</div>
+			</h3>
+			<p>
+				Implemented an operating system kernel as well as some auxiliary subsystems for the Yalnix operating
+				system. Tested and ran on simulated server hardware (RCS 421). Subsystems included a REPL Shell,
+				performant and reliable Malloc, toy FileSystem, and simple HTTP server.
+			</p>
+		</div>
+		<div>
+			<h3>
+				Chat App: Go, Typescript
+
+				<div></div>
+				<div class='badge badge-sm badge-primary'>School Project</div>
+				<div class='badge badge-sm badge-info'>Go</div>
+				<div class='badge badge-sm badge-secondary'>Typescript</div>
+				<div class='badge badge-sm badge-error'>NoSQL</div>
+			</h3>
+			<p>
+				Led small student team building NOSQL Database in Go for realtime chat interface in Vanilla Typescript
+				and Web Components. Worked personally with professor to debug testing apparatus for class and streamline
+				assignments for future students.
+			</p>
+		</div>
+	</div>
+</SidebarLayout>

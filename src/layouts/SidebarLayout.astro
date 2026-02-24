@@ -1,0 +1,21 @@
+---
+import Layout from './Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Nav from '../components/Nav.astro';
+
+const breadcrumbs = Astro.url.pathname.split('/');
+---
+
+<Layout>
+	<div data-signals:sidebar-open='true'>
+		<div class='flex'>
+			<Sidebar />
+			<div class='grow'>
+				<Nav breadcrumbs={breadcrumbs} />
+				<div class='grow'>
+					<slot />
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
