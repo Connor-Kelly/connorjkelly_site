@@ -1,6 +1,8 @@
 ---
 title: Index
 description: Keyboards are cool devices. 
+sidebar:
+    order: 1
 ---
 
 ## So whats the deal? 

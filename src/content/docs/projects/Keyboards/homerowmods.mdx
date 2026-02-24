@@ -1,11 +1,11 @@
 ---
 title: Home Row Mods
 description: Life on the home row.
+sidebar:
+    order: 3
 ---
 
-# Home Row Mods
-
-You ever think about how often you move your wrists off of the home row? 
+You ever think about how often you move your wrists off of the home row?
 You ever hunt and peck?
 You ever get to the end of the workday and you think about how bad your wrists hurt?
 
@@ -14,19 +14,20 @@ What if I told you that that you could fix this all with just a little bit of ke
 Its a lame sales pitch, but a fucking genius idea.
 
 It goes roughly like this: you know how you press a button on your keyboard. What if when you held the button
-down a little longer, it did something different. This idea is brain breaking for a little while, but turns out 
+down a little longer, it did something different. This idea is brain breaking for a little while, but turns out
 to be extremely useful when you use modifier keys a lot. Think about how many times you press the shift key.
 Its slow. You have to move your hand quite a bit. Its rather inconvenient.
 
-So, take the home row: asdf & jkl; and map them like this:
-- a -> super
-- s -> alt
-- d -> shift
-- f -> control
-- j -> control
-- k -> shift
-- l -> alt
-- ; -> super
+So, take the home row: asdf & hjkl; and map them like this:
+
+-   a -> super
+-   s -> alt
+-   d -> shift
+-   f -> control
+-   j -> control
+-   k -> shift
+-   l -> alt
+-   ; -> super
 
 essentially, your keys are loosely organized by how often you use each of the keys.
 
@@ -36,17 +37,13 @@ One of the problems: in vim, you hold down the j and k keys, so essentially you 
 
 # Solving the vim tap-j problem
 
-Home row mods are super cool, but they absolutely slow down your typing speed, it adds the smallest amount of 
+Home row mods are super cool, but they absolutely slow down your typing speed, it adds the smallest amount of
 latency in your key presses. Not that big of a deal, you gain the speed back in not having to move your hand
-to stretch to modifier keys. 
-The main problem I've had is the hold-j problem. 
+to stretch to modifier keys.
+The main problem I've had is the hold-j problem.
 For this, you need to know a little bit about vim. I'll probably write up a personal page for this at some point, but it
 mainly boils own to this: almost all interactions with the program require interaction via keycodes. Want to go up one
 line? You press j and your cursor moves up. You want to keep moving up in the lines? You hold j. Here lies the problem:
 we've remapped the hold-j behavior to a modifier key, (I've chosen CTRL) and so, I cant hold down the key to consistently
-scroll. And I dont want to type a j key constantly. 
+scroll. And I dont want to type a j key constantly.
 For this, we need Quick tapping, `quick-tap-ms: <200>;`
-
-
-
-

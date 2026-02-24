@@ -1,6 +1,8 @@
 ---
 title: Lily 58
 description: My experience in moving past the grail that is the Voyager.
+sidebar:
+    order: 6
 ---
 
 # The love of the the last keyboard
