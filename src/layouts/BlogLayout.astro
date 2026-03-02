@@ -4,6 +4,7 @@ import '../styles/global.css';
 import SidebarLayout from './SidebarLayout.astro';
 import { schemas } from '../content.config';
 import { z } from 'astro/zod';
+import moment from 'moment';
 
 import type { MarkdownLayoutProps } from 'astro';
 type Frontmatter = z.infer<typeof schemas.blog>;
@@ -15,6 +16,39 @@ const { frontmatter, url } = Astro.props;
 const page = (url ?? ('' as string)).split('/').at(-1);
 ---
 
+<script>
+	const anchors = document.querySelectorAll('h1 a, h2 a, h3 a');
+
+	anchors.forEach((anchor) => {
+		anchor.addEventListener('click', (e) => {
+			e.preventDefault();
+			const url = window.location.origin + window.location.pathname + anchor.getAttribute('href');
+
+			navigator.clipboard.writeText(url);
+
+			// Optional: Add your daisyUI toast or tooltip logic here!
+		});
+	});
+</script>
+<script is:inline>
+	/// Web Component for Bootstap Container Component, primarily used in /blog/style_is_hard.md
+	import { LitElement, css, html } from '/vendored/lit.js';
+
+	export class BootstrapContainer extends LitElement {
+		constructor() {
+			super();
+		}
+
+		render() {
+			return html`<html>
+				<link rel="stylesheet" href="/vendored/bootstrap.min.css" />
+				<slot />
+			</html>`;
+		}
+	}
+	customElements.define('bootstrap-container', BootstrapContainer);
+</script>
+
 <SidebarLayout breadcrumbs={url?.split('/')}>
 	<div class='block'>
 		<div class='mx-auto container w-max'>
@@ -24,7 +58,9 @@ const page = (url ?? ('' as string)).split('/').at(-1);
 						<tr>
 							<th> date </th>
 							<td>
-								{new Date(frontmatter.date).toLocaleDateString()}
+								{new Date(frontmatter.date.toString().replace(/T.+/, "")).toLocaleDateString()}
+								{frontmatter.date.toString().replace(/T.+/, "")}
+								{moment(frontmatter.date.toString().replace("T.+", "")).toDate()}
 							</td>
 						</tr>
 						<tr>
