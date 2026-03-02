@@ -1,0 +1,16 @@
+{
+    http_port 8080
+    default_bind 0.0.0.0
+    log default {
+        format console
+    }
+}
+
+localhost {
+    root * /srv
+    file_server {
+        # browse
+    }
+}
+
+
